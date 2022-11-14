@@ -1,9 +1,11 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(400, 500);
 }
 
 function draw() {
   background(220);
   circle(20,20,10);
-  rect(20,20,40,50);
+  showWalls();
+  
 }
+
