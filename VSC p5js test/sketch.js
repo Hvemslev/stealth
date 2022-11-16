@@ -20,6 +20,8 @@ function setup() {
 
   name1=random(names)
   title=random(titles)
+function setup() {
+  createCanvas(400, 500);
 }
 
 function draw() {
@@ -104,3 +106,4 @@ text("HP: "+plHP,20,20)
       
     }*/
 
+}
