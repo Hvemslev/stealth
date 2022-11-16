@@ -4,7 +4,10 @@ constructor(x,y){
     this.y=y
 }
 show(){
+    push()
+    fill(255)
     circle(this.x,this.y,4)
+    pop()
 }
 fire(){
     this.y-=10

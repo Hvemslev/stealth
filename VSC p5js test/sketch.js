@@ -42,6 +42,7 @@ function draw() {
 
     d=dist(bullets[i].sx,bullets[i].sy,playr.pos.x,playr.pos.y)
     if(d<10){
+      bullets.splice(i,1)
       plHP-=1
     }
       
