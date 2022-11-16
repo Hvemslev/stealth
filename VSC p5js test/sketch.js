@@ -1,17 +1,31 @@
 let bullets=[];
-let Player
+let shots=[]
+//let Player
 let playr
+let BossMaxHP,bossDamage
+let names=["Your Mom","Your Dad"]
+let titles=[", the destroyer", ", the Annihilator", ", Eater of Worlds", ": Judge, Jury and Executioner", ", the Iron Sandal"]
+let name1
+let title
+let plHP
 
 function setup() {
   createCanvas(400, 500);
   playr=new player(width/2,300)
-  Player = new Ship;
+  //Player = new Ship;
+  plHP=10
+
+  BossMaxHP=100
+  bossDamage=0
+
+  name1=random(names)
+  title=random(titles)
 }
 
 function draw() {
   background(220);
-  Player.move();
-  Player.display();
+  //Player.move();
+  //Player.display();
 
   playr.show()
   movement()
@@ -21,20 +35,48 @@ function draw() {
     var bllt = new bullet(random(width),0,10)
     bullets.push(bllt)
   }
-
-  //for(i=bullets.length-1;i<-1; i--){
     for(i=0;i<bullets.length; i++){
     bullets[i].show()
     bullets[i].update()
+
+    d=dist(bullets[i].sx,bullets[i].sy,playr.pos.x,playr.pos.y)
+    if(d<10){
+      plHP-=1
+    }
+      
 
     if(bullets[i].sy>height){
       bullets.splice(i,1)
     }
   }
+
+  for(i=0;i<shots.length;i++){
+    shots[i].show()
+    shots[i].fire()
+    if(shots[i].y<0){
+      bossDamage++
+      shots.splice(i,1)
+    }
+
+  }
+
+console.log(shots.length)
+
+if(keyIsDown(32)){
+  shoot()
+}
+
+bossbar()
+
+fill(0)
+strokeWeight(0)
+textSize(10)
+text("HP: "+plHP,20,20)
+
 }
 
   //player
-  class Ship{
+  /*class Ship{
     constructor() {
       this.x = 200;
       this.y = 400;
@@ -60,5 +102,5 @@ function draw() {
       ellipse(this.x, this.y, this.diameter, this.diameter);
     }
       
-    }
+    }*/
 

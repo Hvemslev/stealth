@@ -1,5 +1,5 @@
 function movement(){
-let speed=5
+let speed=3
 
     if(keyIsDown(87)){
     playr.movement.set(0,-speed)

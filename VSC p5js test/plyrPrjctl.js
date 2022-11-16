@@ -4,8 +4,7 @@ constructor(x,y){
     this.y=y
 }
 show(){
-
-    
+    circle(this.x,this.y,4)
 }
 fire(){
     this.y-=10
