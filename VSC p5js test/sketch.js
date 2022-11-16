@@ -15,7 +15,7 @@ function setup() {
   //Player = new Ship;
   plHP=10
 
-  BossMaxHP=100
+  BossMaxHP=50
   bossDamage=0
 
   name1=random(names)

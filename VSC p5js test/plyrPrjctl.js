@@ -10,7 +10,7 @@ show(){
     pop()
 }
 fire(){
-    this.y-=10
+    this.y-=12
 }
 
 }
