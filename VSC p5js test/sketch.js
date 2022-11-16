@@ -20,8 +20,7 @@ function setup() {
 
   name1=random(names)
   title=random(titles)
-function setup() {
-  createCanvas(400, 500);
+
 }
 
 function draw() {
@@ -61,8 +60,6 @@ function draw() {
     }
 
   }
-
-console.log(shots.length)
 
 if(keyIsDown(32)){
   shoot()
@@ -106,4 +103,3 @@ text("HP: "+plHP,20,20)
       
     }*/
 
-}
