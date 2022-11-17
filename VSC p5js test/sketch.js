@@ -8,10 +8,18 @@ let titles=[", the destroyer", ", the Annihilator", ", Eater of Worlds", ": Judg
 let name1
 let title
 let plHP
+var music
+var Laser
+
+
 
 function setup() {
   createCanvas(400, 500);
-  playr=new player(width/2,300)
+  music = loadSound("Boss Time by David Renda.mp3", loaded);
+  Laser = loadSound("sci-fi-laser-gun-shot-sound-effect.mp3", loaded);
+  Laser.setVolume(0.1)
+  music.setVolume(0.3)
+  playr=new player(width/2,300);
   //Player = new Ship;
   plHP=10
 
@@ -20,11 +28,16 @@ function setup() {
 
   name1=random(names)
   title=random(titles)
+  
 
 }
 
+function loaded(){
+  music.play();
+}
+
 function draw() {
-  background(220);
+  background(0);
   //Player.move();
   //Player.display();
 
@@ -63,7 +76,8 @@ function draw() {
   }
 
 if(keyIsDown(32)){
-  shoot()
+  shoot();
+  Laser.play();
 }
 
 bossbar()
