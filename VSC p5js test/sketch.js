@@ -33,13 +33,13 @@ function setup() {
 }
 
 function loaded(){
-  music.play();
+  music.loop();
+  
 }
 
 function draw() {
   background(0);
-  //Player.move();
-  //Player.display();
+
 
   playr.show()
   movement()
@@ -82,9 +82,9 @@ if(keyIsDown(32)){
 
 bossbar()
 
-fill(0)
+fill(255)
 strokeWeight(0)
-textSize(10)
+textSize(15)
 text("HP: "+plHP,20,20)
 
 }
