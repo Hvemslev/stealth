@@ -38,9 +38,9 @@ function loaded(){
 
 function draw() {
   background(0);
-  if(plHP==0 && stage == 1) {
+  if(plHP == 0 && stage == 1) {
     stage = 2;
-} else if(BossMaxHP < 1 && stage == 1){
+} else if(bossDamage == 1000 && stage == 1){
   stage = 2;
 }
 
@@ -49,6 +49,7 @@ function draw() {
     fill(255)
     textSize(16);
     text("CLICK WHEN READY",width / 2,height / 4);
+    text("Use the space bar to shoot",200, 170)
     bossDamage=0
   }
   //----------------------------------------------------------------------------------//
@@ -108,7 +109,10 @@ else if (stage == 2) {
   fill(255)
   textSize(16);
   text("GAME OVER CLICK TO RESTART",width / 2,height / 4);
-
+  
+  if (plHP > 0){
+    text("YOU WIN",200, 150)
+  }else(text("YOU LOST",200, 150))
     
 }
 
