@@ -1,6 +1,5 @@
 let bullets=[];
 let shots=[]
-//let Player
 let playr
 let BossMaxHP,bossDamage
 let names=["Your Mom","Your Dad"]
@@ -35,14 +34,16 @@ function setup() {
 
 function loaded(){
   music.loop();
-  
 }
 
 function draw() {
   background(0);
   if(plHP==0 && stage == 1) {
     stage = 2;
+} else if(BossMaxHP < 1 && stage == 1){
+  stage = 2;
 }
+
   if(stage == 0){
     textAlign(CENTER,CENTER);
     fill(255)
@@ -52,7 +53,6 @@ function draw() {
   }
   //----------------------------------------------------------------------------------//
   else if (stage == 1){
-  
   playr.show()
   movement()
 
@@ -99,7 +99,7 @@ bossbar()
 fill(255)
 strokeWeight(0)
 textSize(15)
-text("HP: "+plHP,20,20)
+text("HP: "+plHP,30,20)
 }
 //-----------------------------------------------------------------------------------------//
 else if (stage == 2) {
@@ -123,10 +123,7 @@ function mouseClicked() {
   
   
   if(stage == 2){
-    music = loadSound("Boss Time by David Renda.mp3", loaded);
-    Laser = loadSound("sci-fi-laser-gun-shot-sound-effect.mp3", loaded);
-    Laser.setVolume(0.1)
-    music.setVolume(0.3)
+
     playr=new player(width/2,300);
     plHP=10
   
