@@ -40,7 +40,7 @@ function loaded(){
 
 function draw() {
   background(0);
-  if(plHP > 1 && stage == 1|| BossMaxHP > 1 ) {
+  if(plHP==0 && stage == 1) {
     stage = 2;
 }
   if(stage == 0){
@@ -48,6 +48,7 @@ function draw() {
     fill(255)
     textSize(16);
     text("CLICK WHEN READY",width / 2,height / 4);
+    bossDamage=0
   }
   //----------------------------------------------------------------------------------//
   else if (stage == 1){
@@ -128,9 +129,6 @@ function mouseClicked() {
     music.setVolume(0.3)
     playr=new player(width/2,300);
     plHP=10
-  
-    BossMaxHP=50
-    bossDamage=0
   
     name1=random(names)
     title=random(titles)
