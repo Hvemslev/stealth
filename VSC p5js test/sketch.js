@@ -3,7 +3,7 @@ let shots=[]
 let playr
 let BossMaxHP,bossDamage
 let names=["Your Mom","Your Dad"]
-let titles=[", the destroyer", ", the Annihilator", ", Eater of Worlds", ": Judge, Jury and Executioner", ", the Iron Sandal"]
+let titles=[", the destroyer", ", the Annihilator", ", Eater of Worlds", ": Judge, Jury and Executioner", ", the Iron Sandal",",destroyer of uranus"]
 let name1
 let title
 let plHP
@@ -33,8 +33,9 @@ function setup() {
 }
 
 function loaded(){
-  music.loop();
-}
+  
+    music.loop();
+  }
 
 function draw() {
   background(0);

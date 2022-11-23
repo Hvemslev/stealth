@@ -8,7 +8,8 @@ function bossbar(){
     fill(255)
     stroke(0)
     strokeWeight(2)
+    textAlign(CENTER,CENTER);
     textSize(15)
-    text(name1+title,130,height/8*7-15)
+    text(name1+title,125,height/8*7-15)
     pop()
 }
