@@ -1,6 +1,5 @@
 let bullets=[];
 let shots=[]
-//let Player
 let playr
 let BossMaxHP,bossDamage
 let names=["Your Mom","Your Dad"]
@@ -24,7 +23,7 @@ function setup() {
   playr=new player(width/2,300);
   plHP=10
 
-  BossMaxHP=50
+  BossMaxHP=1000
   bossDamage=0
 
   name1=random(names)
@@ -39,7 +38,7 @@ function loaded(){
 
 function draw() {
   background(0);
-  if(plHP < 1 && stage == 1) {
+  if(plHP==0 && stage == 1) {
     stage = 2;
 } else if(BossMaxHP < 1 && stage == 1){
   stage = 2;
@@ -50,6 +49,7 @@ function draw() {
     fill(255)
     textSize(16);
     text("CLICK WHEN READY",width / 2,height / 4);
+    bossDamage=0
   }
   //----------------------------------------------------------------------------------//
   else if (stage == 1){
@@ -57,7 +57,7 @@ function draw() {
   movement()
 
 
-  if(random(0,100)<20){
+  if(random(0,100)<20 && bossDamage<BossMaxHP){
     var bllt = new bullet(random(width),0,10)
     bullets.push(bllt)
   }
@@ -89,7 +89,7 @@ function draw() {
 
   }
 
-if(keyIsDown(32)){
+if(keyIsDown(32)&&plHP>0){
   shoot()
   Laser.play();
 }
@@ -126,9 +126,6 @@ function mouseClicked() {
 
     playr=new player(width/2,300);
     plHP=10
-  
-    BossMaxHP=50
-    bossDamage=0
   
     name1=random(names)
     title=random(titles)
