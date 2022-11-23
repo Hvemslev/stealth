@@ -89,7 +89,7 @@ function draw() {
 
   }
 
-if(keyIsDown(32)){
+if(keyIsDown(32)&&plHP>0){
   shoot()
   Laser.play();
 }
