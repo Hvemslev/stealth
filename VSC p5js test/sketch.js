@@ -23,7 +23,7 @@ function setup() {
   //Player = new Ship;
   plHP=10
 
-  BossMaxHP=50
+  BossMaxHP=1000
   bossDamage=0
 
   name1=random(names)
@@ -45,7 +45,7 @@ function draw() {
   movement()
 
 
-  if(random(0,100)<20){
+  if(random(0,100)<20 && bossDamage<BossMaxHP){
     var bllt = new bullet(random(width),0,10)
     bullets.push(bllt)
   }
