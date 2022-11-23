@@ -88,33 +88,3 @@ textSize(15)
 text("HP: "+plHP,20,20)
 
 }
-
-  //player
-  /*class Ship{
-    constructor() {
-      this.x = 200;
-      this.y = 400;
-      this.diameter = 30;
-      this.speed = 5;
-    }
-  
-    move() {
-      if (keyIsPressed) {
-     if (keyCode == RIGHT_ARROW) {
-      this.x += 3; 
-     }  else if (keyCode == LEFT_ARROW) {
-       this.x -= 3;
-     } else if (keyCode == UP_ARROW) {
-       this.y -= 3; 
-     } else if (keyCode == DOWN_ARROW) {
-       this.y +=3; 
-     }
-    }
-    }
-  
-    display() {
-      ellipse(this.x, this.y, this.diameter, this.diameter);
-    }
-      
-    }*/
-
