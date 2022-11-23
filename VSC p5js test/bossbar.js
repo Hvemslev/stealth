@@ -1,6 +1,6 @@
 function bossbar(){
     push()
-    fill(0)
+    fill(50)
     rect(40,height/8*7,320,20)
     fill(255,0,0)
     rect(40,height/8*7,320-bossDamage/BossMaxHP,20)
