@@ -1,9 +1,10 @@
 function bossbar(){
     push()
+    let HPBar = 320
     fill(50)
-    rect(40,height/8*7,320,20)
+    rect(40,height/8*7,HPBar,20)
     fill(255,0,0)
-    rect(40,height/8*7,320-bossDamage/BossMaxHP,20)
+    rect(40,height/8*7,HPBar-HPBar*(bossDamage/BossMaxHP),20)
     fill(255)
     stroke(0)
     strokeWeight(2)

@@ -75,19 +75,21 @@ function draw() {
       bullets.splice(i,1)
     }
   }
-
+  
   for(i=0;i<shots.length;i++){
     shots[i].show()
     shots[i].fire()
     if(shots[i].y<0){
-      bossDamage++
+      if(bossDamage<BossMaxHP){
+        bossDamage++
+      }
       shots.splice(i,1)
     }
 
   }
 
 if(keyIsDown(32)){
-  shoot();
+  shoot()
   Laser.play();
 }
 
